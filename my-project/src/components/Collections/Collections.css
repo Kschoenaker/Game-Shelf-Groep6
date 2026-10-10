@@ -1,0 +1,39 @@
+.collections {
+    padding: 2rem;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.collections.grid {
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+}
+
+.collections.list {
+    grid-template-columns: 1fr;
+}
+
+.game-card {
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background-color: #c8c8c8;
+    width: 12rem;
+    transition: transform 0.18s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-4px);
+}
+
+.game-card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.game-card h3 {
+    margin: 0;
+    padding: 0.75rem 1rem;
+
+    font-size: 1rem;
+}
