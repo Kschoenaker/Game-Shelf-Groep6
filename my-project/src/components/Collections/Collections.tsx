@@ -1,4 +1,6 @@
 import "./Collections.css";
+import games from "./games.json";
+
 import { useState } from "react";
 
 // interface ViewMode {
@@ -12,32 +14,8 @@ type Game = {
     playtime: string;
 };
 
-
 function Collections({ viewMode }: { viewMode: "grid" | "list" }) {
     const [selectedGame, setSelectedGame] = useState<Game | null>(null);
-
-    const games = [
-        {
-            "name": "Resident Evil 7",
-            "image": "/games/resident-evil-7.jpg",
-            "playtime": "10 hours"
-        },
-        {
-            "name": "Resident Evil 2",
-            "image": "/games/resident-evil-7.jpg",
-            "playtime": "15 hours"
-        },
-        {
-            "name": "Resident Evil 1",
-            "image": "/games/resident-evil-7.jpg",
-            "playtime": "20 hours"
-        },
-        {
-            "name": "Resident Evil 0",
-            "image": "/games/resident-evil-7.jpg",
-            "playtime": "25 hours"
-        }
-    ];
 
     function showGameDetails(game: Game) {
         setSelectedGame(game);
@@ -61,6 +39,16 @@ function Collections({ viewMode }: { viewMode: "grid" | "list" }) {
                         <h3>{game.name}</h3>
                     </div>
                 ))}
+                <button
+                    className="view-all-games-button"
+                    type="button"
+                    onClick={() => {
+                        console.log("Clicked!");
+                        <a href="/games">View all games</a>
+                    }}
+                >
+                    View all games
+                </button>
             </section>
 
             {selectedGame && (
