@@ -1,11 +1,15 @@
 import "./Header.css";
 import { Search, Grid2X2, List } from "lucide-react";
 
-function Header({ viewMode, setViewMode }: { viewMode: "grid" | "list"; setViewMode: (mode: "grid" | "list") => void }) {
+function Header({
+    title,
+    viewMode,
+    setViewMode,
+    }: { title: string; viewMode: "grid" | "list"; setViewMode: (mode: "grid" | "list") => void }) {
     return (
         <main className="header">
             <div className="header-header">
-                <h2>COLLECTIONS & SHELFS</h2>
+                <h2>{title}</h2>
 
                 <div className="search-bar">
                     <Search />

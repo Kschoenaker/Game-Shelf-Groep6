@@ -2,6 +2,9 @@
     padding: 2rem;
     display: grid;
     gap: 1.5rem;
+    border-radius: 0.75rem;
+    background-color: #5c5959;
+    border: 2px solid #fff;
 }
 
 .collections.grid {
@@ -36,4 +39,9 @@
     padding: 0.75rem 1rem;
 
     font-size: 1rem;
+}
+
+.view-all-games-button{
+    grid-column: 1 / -1;
+    justify-self: end;
 }

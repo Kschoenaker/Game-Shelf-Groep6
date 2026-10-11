@@ -1,5 +1,6 @@
 import "./Collections.css";
 import games from "./games.json";
+import { useNavigate } from "react-router";
 
 import { useState } from "react";
 
@@ -26,6 +27,8 @@ function Collections({ viewMode }: { viewMode: "grid" | "list" }) {
         console.log(`Clicked on ${game.name}`);
     }
 
+    const navigate = useNavigate();
+
     return (
         <>
             <section className={`collections ${viewMode}`}>
@@ -39,14 +42,7 @@ function Collections({ viewMode }: { viewMode: "grid" | "list" }) {
                         <h3>{game.name}</h3>
                     </div>
                 ))}
-                <button
-                    className="view-all-games-button"
-                    type="button"
-                    onClick={() => {
-                        console.log("Clicked!");
-                        <a href="/games">View all games</a>
-                    }}
-                >
+                <button className="view-all-games-button" onClick={() => navigate("/games")}>
                     View all games
                 </button>
             </section>
