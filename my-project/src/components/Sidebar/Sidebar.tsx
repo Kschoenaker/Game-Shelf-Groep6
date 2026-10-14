@@ -16,6 +16,11 @@ function Sidebar() {
                     <icons.Library />
                     <span>Collections & Shelves</span>
                 </button>
+
+                <button>
+                    <icons.ArrowLeftRight />
+                    <span>Lending</span>
+                </button>
             </nav>
 
             <div className="sidebar-bottom">

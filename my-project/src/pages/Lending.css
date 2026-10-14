@@ -1,0 +1,140 @@
+.lending-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 3rem;
+  background-color: #111111;
+  color: #ffffff;
+  font-family: inherit;
+}
+
+.lending-header {
+  margin-bottom: 3rem;
+}
+
+.lending-eyebrow {
+  margin: 0 0 1rem;
+  color: #fdff00;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+}
+
+.lending-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fdff00;
+}
+
+.lending-subtitle {
+  margin-top: 0.75rem;
+  color: #b5b5b5;
+  font-size: 1rem;
+}
+
+.lending-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  max-width: 1000px;
+}
+
+.lending-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 145px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #333333;
+  border-radius: 0.75rem;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.lending-card:hover {
+  background-color: #ea82e5;
+  color: #000000;
+  border-color: #ea82e5;
+  transform: translateY(-2px);
+}
+
+.lending-card:focus-visible {
+  outline: 2px solid #fdff00;
+  outline-offset: 4px;
+}
+
+.lending-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #222222;
+  color: #fdff00;
+  border-radius: 0.65rem;
+}
+
+.lending-card:hover .lending-card-icon {
+  background-color: #000000;
+  color: #fdff00;
+}
+
+.lending-card-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.lending-card-text h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.lending-card-text p {
+  margin: 0;
+  color: #b5b5b5;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.lending-card:hover .lending-card-text p {
+  color: #222222;
+}
+
+.lending-card-arrow {
+  flex-shrink: 0;
+  color: #fdff00;
+}
+
+.lending-card:hover .lending-card-arrow {
+  color: #000000;
+}
+
+@media (max-width: 700px) {
+  .lending-page {
+    padding: 1.5rem;
+  }
+
+  .lending-header h1 {
+    font-size: 2rem;
+  }
+
+  .lending-options {
+    grid-template-columns: 1fr;
+  }
+
+  .lending-card {
+    min-height: 120px;
+    padding: 1rem;
+  }
+}
