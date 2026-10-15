@@ -1,4 +1,3 @@
-
 import { Routes, Route, Navigate } from "react-router";
 
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -9,34 +8,59 @@ import CreateGameSession from "./pages/GameSessionPages/CreateGameSessions";
 import ManageMySession from "./pages/GameSessionPages/ManageMySession";
 import MySessionSignUps from "./pages/GameSessionPages/MySessionSignUps";
 import NewGameSessionSignUp from "./pages/GameSessionPages/NewGameSessionSignUp";
-import CollectionsShelves from "./components/Collections&Shelves/Collections&ShelvesPage";
-import Home from "./components/Collections&Shelves/Home/home";
-import AllGames from "./components/Collections&Shelves/All-Games/All-Games";
 
 import "./App.css";
 
 export default function App() {
-    return (
-        <div className="app">
-            <Sidebar />
+  return (
+    <div className="app-layout">
+      <Sidebar />
 
-            <main className="main-content">
-                <Routes>
-                    <Route path="/" element={<Navigate to="/home" replace />} />
-                    <Route path="/home" element={<Home />} />
-                    <Route path="/collections&shelves" element={<CollectionsShelves />} />
-                    <Route path="/shelves" element={<CollectionsShelves />} />
-                    <Route path="/games" element={<AllGames />} />
-                    <Route path="/lending" element={<Lending />} />
-                    <Route path="/wishlists" element={<Wishlist />} />
-                    <Route path="/game-sessions" element={<GameSessionStart />} />
-                    <Route path="/game-sessions/create" element={<CreateGameSession />} />
-                    <Route path="/game-sessions/manage" element={<ManageMySession />} />
-                    <Route path="/game-sessions/sign-ups" element={<MySessionSignUps />} />
-                    <Route path="/game-sessions/sign-up/new" element={<NewGameSessionSignUp />} />
-                    <Route path="*" element={<Navigate to="/home" replace />} />
-                </Routes>
-            </main>
-        </div>
-    );
-}
+      <main className="app-main">
+        <Routes>
+          {/* Startpagina */}
+          <Route
+            path="/"
+            element={<Navigate to="/game-sessions" replace />}
+          />
+
+          {/* Session_Page 1 */}
+          <Route
+            path="/game-sessions"
+            element={<GameSessionStart />}
+          />
+
+          {/* Session_Page 2 */}
+          <Route
+            path="/game-sessions/create"
+            element={<CreateGameSession />}
+          />
+
+          {/* Session_Page 3 */}
+          <Route
+            path="/game-sessions/manage"
+            element={<ManageMySession />}
+          />
+
+          {/* Session_Page 4 */}
+          <Route
+            path="/game-sessions/sign-ups"
+            element={<MySessionSignUps />}
+          />
+
+          {/* Session_Page 5 */}
+          <Route
+            path="/game-sessions/sign-up/new"
+            element={<NewGameSessionSignUp />}
+          />
+          <Route path="/" element={<Navigate to="/lending" replace />} />
+          <Route path="/lending" element={<Lending />} />
+          <Route path="/wishlists" element={<Wishlist />} />
+          <Route path="*" element={<Navigate to="/lending" replace />} />
+        </Routes>
+      </main>
+    </div>
+  );
+
+    
+};
