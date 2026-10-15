@@ -1,68 +1,53 @@
 import "./Sidebar.css";
 import * as icons from "lucide-react";
-import { useState } from "react";
-import { useNavigate } from "react-router";
-
+import { NavLink } from "react-router";
 
 function Sidebar() {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const navigate = useNavigate();
-
     return (
         <aside className="sidebar">
             <h1><icons.Gamepad2 /> GameShelf</h1>
 
             <nav>
-                {/* <button> */}
-                    {/* <icons.Home /> */}
-                    <button className="view-all-games-button" onClick={() => navigate("/home")}>
+                <NavLink
+                    className={({ isActive }) => isActive ? "active" : ""}
+                    to="/"
+                >
                     <icons.Home />
-                        Home
-                    </button>
-                {/* </button> */}
+                    <span>Home</span>
+                </NavLink>
 
-                <div className="sidebar-dropdown">
-                    <div className="sidebar-dropdown-heading">
-                        <button
-                            type="button"
-                            className="view-all-games-button"
-                            onClick={() => navigate("/collections&shelves")}
-                        >
-                            <icons.Library />
-                            <span>Collections & Shelves</span>
-                        </button>
+                <NavLink
+                    className={({ isActive }) => isActive ? "active" : ""}
+                    to="/collections"
+                >
+                    <icons.Library />
+                    <span>Collections & Shelves</span>
+                </NavLink>
 
-                        <button
-                            type="button"
-                            aria-label="Menu openen of sluiten"
-                            aria-expanded={isOpen}
-                            onClick={() => setIsOpen(!isOpen)}
-                        >
-                            <icons.ChevronDown />
-                        </button>
-                    </div>
+                <NavLink
+                    className={({ isActive }) => isActive ? "active" : ""}
+                    to="/lending"
+                >
+                    <icons.ArrowLeftRight />
+                    <span>Lending</span>
+                </NavLink>
 
-                    {isOpen && (
-                        <ul>
-                            <button className="view-all-games-button" onClick={() => navigate("/games")}>
-                                View all games
-                            </button>
-                            <button className="view-all-games-button" onClick={() => navigate("/shelves")}>
-                                View all shelves
-                            </button>
-                        </ul>
-                    )}
-                </div>
+                <NavLink
+                    className={({ isActive }) => isActive ? "active" : ""}
+                    to="/wishlists"
+                >
+                    <icons.Heart />
+                    <span>Wishlists & Trading</span>
+                </NavLink>
             </nav>
 
             <div className="sidebar-bottom">
-                <button>
+                <button type="button">
                     <icons.User />
                     <span>Account</span>
                 </button>
 
-                <button>
+                <button type="button">
                     <icons.Settings />
                     <span>Settings</span>
                 </button>
