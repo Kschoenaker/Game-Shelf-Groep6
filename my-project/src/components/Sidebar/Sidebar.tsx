@@ -1,5 +1,6 @@
 import "./Sidebar.css";
 import * as icons from "lucide-react";
+import { NavLink } from "react-router";
 
 function Sidebar() {
     return (
@@ -7,29 +8,40 @@ function Sidebar() {
             <h1><icons.Gamepad2 /> GameShelf</h1>
 
             <nav>
-                <button>
+                <button type="button">
                     <icons.Home />
                     <span>Home</span>
                 </button>
 
-                <button className="active">
+                <button type="button">
                     <icons.Library />
                     <span>Collections & Shelves</span>
                 </button>
 
-                <button>
+                <NavLink
+                    className={({ isActive }) => isActive ? "active" : ""}
+                    to="/lending"
+                >
                     <icons.ArrowLeftRight />
                     <span>Lending</span>
-                </button>
+                </NavLink>
+
+                <NavLink
+                    className={({ isActive }) => isActive ? "active" : ""}
+                    to="/wishlists"
+                >
+                    <icons.Heart />
+                    <span>Wishlists & Trading</span>
+                </NavLink>
             </nav>
 
             <div className="sidebar-bottom">
-                <button>
+                <button type="button">
                     <icons.User />
                     <span>Account</span>
                 </button>
 
-                <button>
+                <button type="button">
                     <icons.Settings />
                     <span>Settings</span>
                 </button>

@@ -26,7 +26,8 @@
     gap: 0.5rem;
 }
 
-.sidebar button {
+.sidebar button,
+.sidebar a {
     width: 100%;
 
     padding: 0.75rem 1rem;
@@ -39,6 +40,7 @@
 
     font-size: 1rem;
     text-align: left;
+    text-decoration: none;
 
     cursor: pointer;
     display: flex;
@@ -46,12 +48,14 @@
     gap: 0.75rem;
 }
 
-.sidebar button:hover {
+.sidebar button:hover,
+.sidebar a:hover {
     background-color: #ea82e5;
     color: #000000;
 }
 
-.sidebar button.active {
+.sidebar button.active,
+.sidebar a.active {
     background-color: #fdff00;
     color: #000000;
 }
