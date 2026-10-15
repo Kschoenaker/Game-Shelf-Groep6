@@ -1,8 +1,10 @@
+
 import { Routes, Route, Navigate } from "react-router";
 
 import Sidebar from "./components/Sidebar/Sidebar";
 import Lending from "./pages/Lending";
 import Wishlist from "./pages/Wishlist";
+
 import GameSessionStart from "./pages/GameSessionPages/GameSessionStart";
 import CreateGameSession from "./pages/GameSessionPages/CreateGameSessions";
 import ManageMySession from "./pages/GameSessionPages/ManageMySession";
@@ -11,56 +13,52 @@ import NewGameSessionSignUp from "./pages/GameSessionPages/NewGameSessionSignUp"
 
 import "./App.css";
 
-export default function App() {
+function App() {
   return (
-    <div className="app-layout">
+    <div className="app">
       <Sidebar />
 
-      <main className="app-main">
+      <main className="main-content">
         <Routes>
-          {/* Startpagina */}
           <Route
             path="/"
-            element={<Navigate to="/game-sessions" replace />}
+            element={<Navigate to="/lending" replace />}
           />
 
-          {/* Session_Page 1 */}
+          <Route path="/lending" element={<Lending />} />
+          <Route path="/wishlists" element={<Wishlist />} />
+
+          {/* Game session pages */}
           <Route
             path="/game-sessions"
             element={<GameSessionStart />}
           />
-
-          {/* Session_Page 2 */}
           <Route
             path="/game-sessions/create"
             element={<CreateGameSession />}
           />
-
-          {/* Session_Page 3 */}
           <Route
             path="/game-sessions/manage"
             element={<ManageMySession />}
           />
-
-          {/* Session_Page 4 */}
           <Route
             path="/game-sessions/sign-ups"
             element={<MySessionSignUps />}
           />
-
-          {/* Session_Page 5 */}
           <Route
             path="/game-sessions/sign-up/new"
             element={<NewGameSessionSignUp />}
           />
-          <Route path="/" element={<Navigate to="/lending" replace />} />
-          <Route path="/lending" element={<Lending />} />
-          <Route path="/wishlists" element={<Wishlist />} />
-          <Route path="*" element={<Navigate to="/lending" replace />} />
+
+          {/* Redirect unknown routes */}
+          <Route
+            path="*"
+            element={<Navigate to="/lending" replace />}
+          />
         </Routes>
       </main>
     </div>
   );
+}
 
-    
-};
+export default App;

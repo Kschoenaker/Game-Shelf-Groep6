@@ -18,10 +18,6 @@ function Sidebar() {
                     <icons.Library />
                     <span>Collections & Shelves</span>
                 </button>
-                <button className="active">
-                    <icons.Library />
-                    <span>Game session</span>
-                </button>
 
                 <NavLink
                     className={({ isActive }) => isActive ? "active" : ""}
