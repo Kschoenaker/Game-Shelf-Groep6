@@ -1,28 +1,54 @@
 import "./Sidebar.css";
 import * as icons from "lucide-react";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
+import { useState } from "react";
 
 function Sidebar() {
+    const navigate = useNavigate();
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <aside className="sidebar">
             <h1><icons.Gamepad2 /> GameShelf</h1>
 
             <nav>
-                <NavLink
-                    className={({ isActive }) => isActive ? "active" : ""}
-                    to="/"
-                >
+                <button className="view-all-games-button" onClick={() => navigate("/home")}>
                     <icons.Home />
-                    <span>Home</span>
-                </NavLink>
+                    Home
+                </button>
 
-                <NavLink
-                    className={({ isActive }) => isActive ? "active" : ""}
-                    to="/collections"
-                >
-                    <icons.Library />
-                    <span>Collections & Shelves</span>
-                </NavLink>
+                <div className="sidebar-dropdown">
+                    <div className="sidebar-dropdown-heading">
+                        <button
+                            type="button"
+                            className="view-all-games-button"
+                            onClick={() => navigate("/collections&shelves")}
+                        >
+                            <icons.Library />
+                            <span>Collections & Shelves</span>
+                        </button>
+
+                        <button
+                            type="button"
+                            aria-label="Menu openen of sluiten"
+                            aria-expanded={isOpen}
+                            onClick={() => setIsOpen(!isOpen)}
+                        >
+                            <icons.ChevronDown />
+                        </button>
+                    </div>
+
+                    {isOpen && (
+                        <ul>
+                            <button className="view-all-games-button" onClick={() => navigate("/games")}>
+                                View all games
+                            </button>
+                            <button className="view-all-games-button" onClick={() => navigate("/shelves")}>
+                                View all shelves
+                            </button>
+                        </ul>
+                    )}
+                </div>
 
                 <NavLink
                     className={({ isActive }) => isActive ? "active" : ""}
