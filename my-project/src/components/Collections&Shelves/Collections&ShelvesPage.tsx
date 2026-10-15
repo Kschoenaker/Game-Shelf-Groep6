@@ -1,5 +1,5 @@
 import "../../App.css";
-import Sidebar from "./Sidebar/Sidebar";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import Header from "./Header/Header";
 import Banner from "./Banner/Banner";
 import Collections from "./Collections/Collections";
