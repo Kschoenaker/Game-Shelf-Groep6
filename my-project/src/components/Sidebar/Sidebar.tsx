@@ -1,17 +1,21 @@
 import "./Sidebar.css";
 import * as icons from "lucide-react";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
+import { useState } from "react";
 
 function Sidebar() {
+    const navigate = useNavigate();
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <aside className="sidebar">
             <h1><icons.Gamepad2 /> GameShelf</h1>
 
 
             <nav>
-                <button type="button">
+                <button className="view-all-games-button" onClick={() => navigate("/home")}>
                     <icons.Home />
-                    <span>Home</span>
+                    Home
                 </button>
 
                 <button type="button">
