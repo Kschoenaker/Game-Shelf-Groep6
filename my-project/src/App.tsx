@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router";
 
 import Sidebar from "./components/Sidebar/Sidebar";
 import Lending from "./pages/Lending";
