@@ -6,6 +6,7 @@ function Sidebar() {
         <aside className="sidebar">
             <h1><icons.Gamepad2 /> GameShelf</h1>
 
+
             <nav>
                 <button>
                     <icons.Home />
@@ -16,8 +17,11 @@ function Sidebar() {
                     <icons.Library />
                     <span>Collections & Shelves</span>
                 </button>
+                <button className="active">
+                    <icons.Library />
+                    <span>Game session</span>
+                </button>
             </nav>
-
             <div className="sidebar-bottom">
                 <button>
                     <icons.User />
