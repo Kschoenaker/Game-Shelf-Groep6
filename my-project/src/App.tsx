@@ -1,7 +1,8 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import Sidebar from "./components/Sidebar/Sidebar";
-
+import Lending from "./pages/Lending";
+import Wishlist from "./pages/Wishlist";
 import GameSessionStart from "./pages/GameSessionPages/GameSessionStart";
 import CreateGameSession from "./pages/GameSessionPages/CreateGameSessions";
 import ManageMySession from "./pages/GameSessionPages/ManageMySession";
@@ -52,8 +53,14 @@ export default function App() {
             path="/game-sessions/sign-up/new"
             element={<NewGameSessionSignUp />}
           />
+          <Route path="/" element={<Navigate to="/lending" replace />} />
+          <Route path="/lending" element={<Lending />} />
+          <Route path="/wishlists" element={<Wishlist />} />
+          <Route path="*" element={<Navigate to="/lending" replace />} />
         </Routes>
       </main>
     </div>
   );
-}
+
+    
+};
