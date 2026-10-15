@@ -1,9 +1,25 @@
-.app {
-    display: flex;
-    min-height: 100vh;
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #101218;
 }
 
-.main-content {
-    flex: 1;
-    min-width: 0;
+.sidebar {
+  flex: 0 0 16rem;
+  width: 16rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.app-main {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 48rem) {
+  .sidebar {
+    flex-basis: 4.5rem;
+    width: 4.5rem;
+  }
 }

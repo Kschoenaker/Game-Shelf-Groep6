@@ -1,0 +1,38 @@
+
+[
+  {
+    "id": 101,
+    "name": "Alex Jansen",
+    "email": "alex@example.com"
+  },
+  {
+    "id": 102,
+    "name": "Sam de Vries",
+    "email": "sam@example.com"
+  },
+  {
+    "id": 103,
+    "name": "Jamie Bakker",
+    "email": "jamie@example.com"
+  },
+  {
+    "id": 201,
+    "name": "Robin Smit",
+    "email": "robin@example.com"
+  },
+  {
+    "id": 202,
+    "name": "Noah Visser",
+    "email": "noah@example.com"
+  },
+  {
+    "id": 203,
+    "name": "Charlie Bos",
+    "email": "charlie@example.com"
+  },
+  {
+    "id": 204,
+    "name": "Dani Peters",
+    "email": "dani@example.com"
+  }
+]
