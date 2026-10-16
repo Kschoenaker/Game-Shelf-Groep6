@@ -1,6 +1,272 @@
-.session-page
-{
-    page-background: #111111;
-    margin:0;
-    color:blueviolet;
+.session-layout {
+    display: flex;
+    min-height: 100vh;
+    background-color: #111111;
 }
+
+.session-page {
+    --page-background: #111111;
+    --surface: #000000;
+    --card-hover: #1b1525;
+    --border: #333333;
+    --purple: #a855f7;
+    --pink: #ea82e5;
+    --text: #ffffff;
+    --muted-text: #b5b5b5;
+
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding: 2.5rem;
+    background-color: var(--page-background);
+    color: var(--text);
+    font-family: inherit;
+}
+
+
+
+/* HEADER */
+
+.session-header {
+    margin-bottom: 2.5rem;
+}
+
+.session-eyebrow {
+    margin: 0 0 0.75rem;
+    color: var(--purple);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+}
+
+.session-header h1 {
+    margin: 0;
+    color: var(--purple);
+    font-size: 2.25rem;
+}
+
+.session-subtitle {
+    margin-top: 0.75rem;
+    color: var(--muted-text);
+    line-height: 1.6;
+}
+
+/* SESSION CARDS */
+
+.session-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+.session-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+    padding: 1.5rem;
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    color: var(--text);
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+/* Hover effect for the entire clickable card */
+
+.session-card:hover {
+    background-color: var(--card-hover);
+    border-color: var(--purple);
+    transform: translateY(-3px);
+}
+
+.session-card:focus-visible {
+    outline: 2px solid var(--purple);
+    outline-offset: 4px;
+}
+
+/* ICON */
+
+.session-card-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    color: var(--purple);
+    background-color: #241633;
+    border-radius: 0.5rem;
+}
+
+/* CARD TEXT */
+
+.session-card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.session-card-content h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+.session-card-content p {
+    margin: 0;
+    color: var(--muted-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ARROW */
+
+.session-card-arrow {
+    flex-shrink: 0;
+    color: var(--pink);
+    transition: transform 0.2s ease;
+}
+
+.session-card:hover .session-card-arrow {
+    transform: translate(3px, -3px);
+}
+
+/*   RESPONSIVE LAYOUT  */
+
+@media (max-width: 1000px) {
+    .session-page {
+        padding: 2rem;
+    }
+
+    .session-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .session-page {
+        padding: 1.25rem;
+    }
+
+    .session-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .session-card {
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .session-card-icon {
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+
+    .session-card-content h2 {
+        font-size: 1rem;
+    }
+
+    .session-card-content p {
+        font-size: 0.85rem;
+    }
+
+/* GAME SESSION CARDS */
+.session-game-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* DATE BLOCK ON THE LEFT */
+.session-game-card .session-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 4.375rem;
+    min-height: 5.625rem;
+    align-self: stretch;
+    background-color: #321b49;
+    border: 1px solid #bd78ff;
+    border-radius: 4.5rem;
+}
+
+.session-game-card .session-date span:first-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.session-game-card .session-date span:last-child {
+    color: #ea82e5;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* SESSION INFORMATION */
+.session-game-card .session-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    min-width: 0;
+}
+
+.session-game-card .session-card-content h2 {
+    margin: 0 0 0.75rem;
+    color: var(--purple);
+}
+
+/* LOCATION AND TIME */
+.session-game-card .session-card-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+}
+
+.session-game-card .session-card-details p,
+.session-game-card .session-capacity {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0;
+    color: var(--muted-text);
+    font-size: 0.9rem;
+}
+
+/* CAPACITY */
+.session-game-card .session-capacity {
+    margin-top: auto;
+    padding-top: 1rem;
+    color: var(--pink);
+}
+
+/* ARROW ON THE RIGHT */
+.session-game-card .session-card-arrow {
+    flex-shrink: 0;
+    align-self: center;
+    color: var(--pink);
+}
+
+/* ONE SESSION PER ROW */
+.session-grid:has(.session-game-card) {
+    grid-template-columns: minmax(0, 1fr);
+}
+
+}
+
+
+/* FUTURE IDEAS:
+   - Add a Pac-Man-inspired loading animation.
+   - Add a status badge for ongoing or cancelled sessions.
+   - Add a search bar and filters to Explore Sessions.
+   - Add a purple accent line or glow to the active section.
+   - Add a session count above the cards.
+   - Add a special empty state when the user has no sessions.
+*/
