@@ -65,6 +65,13 @@ function Sidebar() {
                     <icons.Heart />
                     <span>Wishlists & Trading</span>
                 </NavLink>
+                <NavLink
+                    className={({ isActive }) => isActive ? "active" : ""}
+                    to="/GameSession"
+                >
+                    <icons.Library />
+                    <span>GameSession</span>
+                </NavLink>
             </nav>
 
             <div className="sidebar-bottom">
