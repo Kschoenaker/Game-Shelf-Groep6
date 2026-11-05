@@ -38,7 +38,7 @@ function Lending() {
       <section className="lending-options">
         {lendingOptions.map((option) => {
           const Icon = option.icon;
-
+              //  check of dit met een article kan en meer substukjes
           return (
             <button
               className="lending-card"
