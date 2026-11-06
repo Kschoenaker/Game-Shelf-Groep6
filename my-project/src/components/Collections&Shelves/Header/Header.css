@@ -1,82 +1,111 @@
-.header {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    box-sizing: border-box;
+.shelves-header {
+    margin-bottom: 1.5rem;
 }
 
-.header-header {
-    padding: 1rem 1.5rem;
-
-    background-color: #e5e5e5;
-
-    border-radius: 0.75rem;
-
+.shelves-header-bar {
     display: flex;
     align-items: center;
     gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #333333;
+    border-radius: 0.75rem;
 }
 
-.header-header h2 {
+.shelves-header-bar h1 {
     margin: 0;
-
-    font-size: 1.8rem;
+    color: #fdff00;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
-.search-bar {
+.shelves-search {
     margin-left: auto;
-
-    width: 25%;
-
     display: flex;
     align-items: center;
     gap: 0.75rem;
-
     padding: 0.75rem 1rem;
-
-    border: 0.1rem solid #000000;
-    border-radius: 0.5rem;
+    width: min(25%, 20rem);
+    background-color: #222222;
+    color: #fdff00;
+    border: 1px solid #444444;
+    border-radius: 0.35rem;
+    box-sizing: border-box;
 }
 
-.search-bar svg {
+.shelves-search svg {
+    flex-shrink: 0;
     width: 1.2rem;
     height: 1.2rem;
 }
 
-.search-bar input {
+.shelves-search input {
     width: 100%;
-
+    min-width: 0;
+    padding: 0;
+    background: transparent;
+    color: #ffffff;
     border: none;
     outline: none;
-
-    font-size: 1rem;
+    font: inherit;
 }
 
-.view-switcher {
+.shelves-search input::placeholder {
+    color: #b5b5b5;
+}
+
+.shelves-search:focus-within {
+    outline: 2px solid #fdff00;
+    outline-offset: 2px;
+}
+
+.shelves-view-switcher {
     display: flex;
     gap: 0.25rem;
 }
 
-.view-switcher button {
+.shelves-view-switcher button {
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 0.6rem;
-
     border: none;
-    border-radius: 0.5rem;
-
+    border-radius: 0.35rem;
     background-color: transparent;
-
+    color: #b5b5b5;
     cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.view-switcher button:hover {
+.shelves-view-switcher button:hover,
+.shelves-view-switcher button.active {
     background-color: #ea82e5;
+    color: #000000;
 }
 
-.view-switcher svg {
+.shelves-view-switcher button:focus-visible {
+    outline: 2px solid #fdff00;
+    outline-offset: 3px;
+}
+
+.shelves-view-switcher svg {
     width: 1.3rem;
     height: 1.3rem;
+}
+
+@media (max-width: 700px) {
+    .shelves-header-bar {
+        flex-wrap: wrap;
+    }
+
+    .shelves-header-bar h1 {
+        font-size: 1.2rem;
+    }
+
+    .shelves-search {
+        order: 1;
+        width: 100%;
+        margin-left: 0;
+    }
 }

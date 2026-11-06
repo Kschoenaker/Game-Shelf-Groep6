@@ -31,10 +31,10 @@ function Collections({ viewMode }: { viewMode: "grid" | "list" }) {
 
     return (
         <>
-            <section className={`collections ${viewMode}`}>
+            <section className={`collection-games ${viewMode}`}>
                 {games.map((game) => (
                     <div
-                        className="game-card"
+                        className="collection-game-card"
                         key={game.name}
                         onClick={() => handleGameClick(game)}
                     >
@@ -42,13 +42,13 @@ function Collections({ viewMode }: { viewMode: "grid" | "list" }) {
                         <h3>{game.name}</h3>
                     </div>
                 ))}
-                <button className="view-all-games-button" onClick={() => navigate("/games")}>
+                <button className="view-all-games-button" type="button" onClick={() => navigate("/games")}>
                     View all games
                 </button>
             </section>
 
             {selectedGame && (
-                <aside className="game-details">
+                <aside className="collection-game-details">
                     <img src={selectedGame.image} alt={selectedGame.name} />
                     <h2>{selectedGame.name}</h2>
                     <p>Speeltijd: {selectedGame.playtime}</p>
