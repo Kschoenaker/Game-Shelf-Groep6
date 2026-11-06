@@ -3,7 +3,7 @@ import { Navigate, Route, Routes } from "react-router";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Lending from "./pages/Lending";
 import Wishlist from "./pages/Wishlist";
-import CollectionsShelves from "./components/Collections&Shelves/Collections&ShelvesPage";
+import CollectionsShelves from "./pages/Collections&ShelvesPage";
 import GameSession from "./pages/GameSession"
 
 
