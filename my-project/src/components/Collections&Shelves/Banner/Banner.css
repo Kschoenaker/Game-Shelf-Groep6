@@ -1,71 +1,36 @@
-.collections {
-    padding-top: 2rem;
-}
-
-.collections h2 {
-    margin: 0 0 1rem 0;
-
-    font-size: 1.5rem;
-}
-
-.collection-card {
-    width: 15rem;
-    padding: 1.5rem;
-
-    border-radius: 0.75rem;
-
-    background-color: #f2f2f2;
-}
-
-.collection-card h3 {
-    margin: 0 0 0.5rem 0;
-
-    font-size: 1.2rem;
-}
-
-.collection-card p {
-    margin: 0;
+.banner {
+    margin-bottom: 1.5rem;
 }
 
 .games-banner {
     width: 100%;
     height: 14rem;
-
     position: relative;
-
     display: flex;
     align-items: flex-end;
-
-    padding: 2rem;
-
+    padding: 1.75rem;
     box-sizing: border-box;
-
     border-radius: 0.75rem;
-
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 
 .games-banner::before {
     content: "";
-
     position: absolute;
     inset: 0;
-
-    background-color: rgba(0, 0, 0, 0.55);
-
-    border-radius: 0.75rem;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.2));
 }
 
 .games-banner-content {
     position: relative;
-
     color: #ffffff;
 }
 
 .games-banner-content h2 {
-    margin: 0 0 0.75rem 0;
-
+    margin: 0 0 0.75rem;
+    color: #fdff00;
     font-size: 2rem;
     font-weight: 700;
 }
@@ -73,7 +38,30 @@
 .games-banner-stats {
     display: flex;
     gap: 1.5rem;
-
     font-size: 1rem;
     font-weight: 600;
+}
+
+.games-banner-stats span {
+    padding: 0.4rem 0.65rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(253, 255, 0, 0.55);
+    border-radius: 0.25rem;
+}
+
+@media (max-width: 600px) {
+    .games-banner {
+        height: 11rem;
+        padding: 1.25rem;
+    }
+
+    .games-banner-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .games-banner-stats {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
 }

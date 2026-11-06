@@ -7,31 +7,37 @@ function Header({
     setViewMode,
     }: { title: string; viewMode: "grid" | "list"; setViewMode: (mode: "grid" | "list") => void }) {
     return (
-        <main className="header">
-            <div className="header-header">
-                <h2>{title}</h2>
+        <header className="shelves-header">
+            <div className="shelves-header-bar">
+                <h1>{title}</h1>
 
-                <div className="search-bar">
+                <label className="shelves-search">
                     <Search />
-                    <input type="text" placeholder="Search..." />
-                </div>
+                    <input type="search" placeholder="Search..." aria-label="Search games" />
+                </label>
 
-                <div className="view-switcher">
+                <div className="shelves-view-switcher" aria-label="Choose display mode">
                     <button
+                        type="button"
                         className={viewMode === "grid" ? "active" : ""}
+                        aria-label="Grid view"
+                        aria-pressed={viewMode === "grid"}
                         onClick={() => setViewMode("grid")}
                     >
                         <Grid2X2 />
                     </button>
                     <button
+                        type="button"
                         className={viewMode === "list" ? "active" : ""}
+                        aria-label="List view"
+                        aria-pressed={viewMode === "list"}
                         onClick={() => setViewMode("list")}
                     >
                         <List />
                     </button>
                 </div>
             </div>
-        </main>
+        </header>
     );
 }
 
