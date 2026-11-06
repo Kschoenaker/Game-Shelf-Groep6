@@ -3,7 +3,8 @@ import { Navigate, Route, Routes } from "react-router";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Lending from "./pages/Lending";
 import Wishlist from "./pages/Wishlist";
-import CollectionsShelves from "./pages/Collections&ShelvesPage";
+import CollectionsShelves from "./components/Collections&Shelves/Collections&ShelvesPage";
+import GameSession from "./pages/GameSession"
 
 
 import Home from "./components/Collections&Shelves/Home/home";
@@ -20,10 +21,12 @@ function App() {
                     <Route path="/home" element={<Home />} />
                     <Route path="/collections&shelves" element={<CollectionsShelves />} />
                     <Route path="/shelves" element={<CollectionsShelves />} />
+                    <Route path="/GameSession" element={<GameSession />} />
                     <Route path="/games" element={<AllGames />} />
                     <Route path="/lending" element={<Lending />} />
                     <Route path="/wishlists" element={<Wishlist />} />
                     <Route path="*" element={<Navigate to="/home" replace />} />
+
                 </Routes>
             </main>
         </div>
