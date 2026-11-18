@@ -1,0 +1,65 @@
+@baseUrl = http://localhost:5182
+
+### Read wishlist items and offers
+GET {{baseUrl}}/api/wishlistitems
+
+### Read one wishlist item
+GET {{baseUrl}}/api/wishlistitems/1
+
+### Get games for the wishlist/trade forms
+GET {{baseUrl}}/api/games
+
+### Get temporary development members
+GET {{baseUrl}}/api/members
+
+### Create a wishlist item
+POST {{baseUrl}}/api/wishlistitems
+Content-Type: application/json
+
+{
+  "memberId": 1,
+  "gameId": 1,
+  "priority": 1,
+  "note": "English edition; good condition is fine."
+}
+
+### Update a wishlist item (the actor must own it)
+PUT {{baseUrl}}/api/wishlistitems/1
+Content-Type: application/json
+
+{
+  "actorMemberId": 1,
+  "gameId": 1,
+  "priority": 2,
+  "note": "English edition; very good condition preferred."
+}
+
+### Try deleting an item that has offers (returns 409 to preserve trade history)
+DELETE {{baseUrl}}/api/wishlistitems/1?actorMemberId=1
+
+### Delete an item without offers (replace 2 with an owned item id)
+DELETE {{baseUrl}}/api/wishlistitems/2?actorMemberId=1
+
+### Missing wishlist item (returns 404)
+DELETE {{baseUrl}}/api/wishlistitems/999?actorMemberId=1
+
+### Propose a trade (replace 1 with a wishlist item id)
+POST {{baseUrl}}/api/wishlistitems/1/offers
+Content-Type: application/json
+
+{
+  "proposerId": 2,
+  "requestedGameId": 4
+}
+
+### Accept an offer (replace 1 with an offer id)
+PUT {{baseUrl}}/api/tradeoffers/1/status
+Content-Type: application/json
+
+{
+  "actorMemberId": 1,
+  "status": "accepted"
+}
+
+### Read one offer
+GET {{baseUrl}}/api/tradeoffers/1
