@@ -87,6 +87,9 @@ project.lock.json
 project.fragment.lock.json
 artifacts/
 .artifacts/
+GameShelf.Api/*.db
+GameShelf.Api/*.db-shm
+GameShelf.Api/*.db-wal
 
 # ASP.NET Scaffolding
 ScaffoldingReadMe.txt
